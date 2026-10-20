@@ -1,0 +1,87 @@
+PM — Skills Reference
+===========================
+
+CORE (always on, free forever)
+------------------------------
+
+pm prompt
+  Turns vague ideas into structured build specs before any code runs.
+  Three-round confidence loop, five build modes, multi-task splitting.
+  Strict boundary rule: only touches files in the spec. No drive-by refactors,
+  no cleanup of code you didn't ask about, no features that weren't requested.
+
+pm scan
+  Lightweight post-build security scorer and build mode router.
+  Runs after every build — loads pm guard automatically when score drops below 75.
+
+pm revert
+  Three things Claude can't do on its own: auto-saves every 5 prompts so you
+  never lose work, search-by-description undo ("go back to when login worked"),
+  and named checkpoints ("save as auth-working") to bookmark known-good states.
+
+FREE MODULES (free forever)
+----------------------------
+
+pm standup
+  Session summary in plain English with zero jargon.
+  Shows what you built, what needs fixing, what to do next, plus a shareable paragraph.
+
+pm scope
+  Focus guard that prevents scope creep during a session.
+  Nudges when you drift, parks off-topic ideas for your standup summary.
+
+pm map
+  Auto-generates short nicknames for every file in your project.
+  Builds a dependency graph via server-side AST extraction (no install needed).
+  Shows imports, shared tables, shared env vars, and transitive blast radius.
+  God nodes (high-connectivity files) get warnings during builds.
+  Danger zones show which tables/env vars would break the most files if changed.
+  Say pm map show for the full relationship map. Loads at session start.
+
+pm style
+  CSS conflict detector and style consistency enforcer.
+  Catches overwrites, orphaned class names, and missing CSS variables.
+
+pm merge
+  Vercel serverless function consolidator.
+  Watches API file count, warns at 10-11, auto-consolidates at the 12-file limit.
+
+pm resolve
+  Full-sweep verification and self-fix loop for sweeping changes and regressions.
+  Auto-loads on triggers like "change everything", "still not working", or when
+  pm scan detects you're asking for the same edit again. Walks change-specific
+  surfaces (renames, removals, additions, replacements, regressions) and fixes
+  any miss before declaring done. One-shot when auto-loaded — ejects after the
+  triggering prompt so it doesn't carry into the next.
+
+pm surgical
+  Strict surgical-mode lock — the opposite of pm resolve. When loaded, blocks
+  pm resolve auto-load, locks mode picker to surgical only, and caps the spec
+  at one file by default. Use when you want a quick tight fix and don't want
+  pm scan auto-loading full-sweep mode if you accidentally type a sweep
+  keyword. Manual only — say `pm surgical on` to load, `pm surgical off` to
+  release.
+
+pm train
+  Train your active nuggie with preferences, permissions, vocabulary, and
+  triggers. Two modes: explicit (you tell Claude what to capture) or inexplicit
+  (Claude infers from the current session). Compressed silently and merged
+  into the nuggie's skill_md on nuggieai.com. Auto-loaded into context on
+  every future activation. Edit it later in plain text from the nuggie page
+  on nuggieai.com. Free max 1 KB merged · Pro max 8 KB. Manual only — say
+  `pm train`, `pm train change nuggie`, or `pm train show`.
+
+PRO MODULES (30-day free trial, then $0.99/mo)
+-----------------------------------------------
+
+pm guard
+  Deep 18-point security audit with 0-100 scoring and auto-fix.
+  Seven checks fix silently, eleven flag with plain English questions.
+
+pm connect
+  Frontend-to-backend connection debugger.
+  Diagnoses URL mismatches, wrong data shapes, missing auth, and env config issues.
+
+pm claudemd
+  CLAUDE.md optimizer that trims PM-generated content.
+  Removes duplicates and outdated context while protecting everything you wrote.
